@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *::after{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+           
+            height: 100vh;
+            place-items: center;
+            background: linear-gradient(335deg,#8052ec,#d161ff);
+        }
+
+            
+            .clock{
+                width: 550px;
+                height: 150px;
+                
+                position: absolute;
+                transform: translate(-50%, -50%);
+                top: 50%;
+                left: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .clock div{
+                
+                position: relative;
+                background: #fff;
+                height: 100%;
+                width: 150px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 60px;
+                box-shadow: 0 15px 30px rgb(0, 0, 0,0.3);
+                letter-spacing: 5px;
+                border-radius: 20pt;
+            }
+            
+            
+           
+            
+    </style>
+</head>
+<body>
+    
+
+        <div class="clock">
+           <div id="hour">00</div>
+           <span>:</span>
+           <div id="min">00</div>
+           <span>:</span>
+           <div id="sec">00</div>
+           
+        </div>
+    
+
+    <script>
+        let hour = document.getElementById("hour");
+        let min = document.getElementById("min");
+        let sec = document.getElementById("sec");
+
+
+        const clock = setInterval(
+            function time(){
+                let date = new Date();
+                let hr = date.getHours();
+                let mins = date.getMinutes();
+                let secs = date.getSeconds();
+                
+
+                if(hr<10){
+                    hr = "0" + hr;
+                }
+
+                if(hr>12){
+                    hr = hr-12;
+                }
+
+                if(mins<10){
+                    mins = "0" + mins;
+                
+                }
+                if(hr<10){
+                    hr = "0" + hr;
+                
+                }
+
+                if(secs<10){
+                    secs = "0" + secs;
+                }
+
+                hour.textContent = hr;
+                min.textContent = mins;
+                sec.textContent = secs;
+            },1000
+        )
+
+
+        
+    
+
+            
+        
+    </script>
+</body>
+</html>
