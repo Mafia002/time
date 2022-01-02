@@ -11,18 +11,18 @@
             padding: 0;
             box-sizing: border-box;
         }
-        body{
+         body{
            
-            height: 100vh;
+             height: 96vh; 
+            /* width: 100vw; */
             place-items: center;
             background: linear-gradient(335deg,#8052ec,#d161ff);
+            min-width: 408px;
         }
 
             
             .clock{
-                width: 550px;
-                height: 150px;
-                
+             
                 position: absolute;
                 transform: translate(-50%, -50%);
                 top: 50%;
@@ -36,14 +36,18 @@
                 position: relative;
                 background: #fff;
                 height: 100%;
-                width: 150px;
+                min-width: 120px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 font-size: 60px;
                 box-shadow: 0 15px 30px rgb(0, 0, 0,0.3);
                 letter-spacing: 5px;
-                border-radius: 20pt;
+                border-radius: 20px;
+            }
+            header{
+                text-align:center;
+                background-color: #fff;
             }
             
             
@@ -52,7 +56,10 @@
     </style>
 </head>
 <body>
-    
+    <header>
+
+        <h1>Time</h1>
+    </header>
 
         <div class="clock">
            <div id="hour">00</div>
@@ -79,7 +86,7 @@
                 
 
                 if(hr<10){
-                    hr =  hr;
+                    hr = "0" + hr;
                 }
 
                 if(hr>12){
@@ -91,7 +98,7 @@
                 
                 }
                 if(hr<10){
-                    hr = "0" + hr;
+                    hr = hr;
                 
                 }
 
